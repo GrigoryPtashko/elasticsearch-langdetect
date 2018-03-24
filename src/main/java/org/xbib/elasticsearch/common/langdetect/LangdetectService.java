@@ -130,7 +130,7 @@ public class LangdetectService {
             if (langKey == null || langKey.isEmpty()) {
                 continue;
             }
-            String langPath = "/langdetect/" + (this.profile == null ? "" : this.profile + "/") + langKey;
+            String langPath = "/langdetect/" + (this.profile == null || this.profile.isEmpty() ? "" : this.profile + "/") + langKey;
             InputStream in = getClass().getResourceAsStream(langPath);
             if (in == null) {
                 if (ignoreNullResources) {
